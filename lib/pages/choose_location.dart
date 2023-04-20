@@ -8,15 +8,23 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
+  int _count = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.pinkAccent.shade100,
+        backgroundColor: Colors.pinkAccent,
         title: const Text('Choose a location'),
         elevation: 0,
       ),
-      body: const Text('Choose Location Page'),
+      body: ElevatedButton(
+        onPressed: () {
+          setState(() {
+            _count +=1 ;
+          });
+        }, child: Text('The Count is $_count'),
+
+      )
     );
   }
 }
